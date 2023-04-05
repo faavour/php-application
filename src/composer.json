@@ -1,0 +1,17 @@
+{
+    "name": "mac/lecturio-2",
+    "autoload": {
+        "psr-4": {
+            "Mac\\Lecturio2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "faavour",
+            "email": "favourjohn862@gmail.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.15"
+    }
+}

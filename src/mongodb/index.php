@@ -77,6 +77,7 @@ try {
 } catch (MongoDB\Driver\Exception\Exception $e) {
     $error_message = 'Error retrieving todo items from MongoDB database: ' . $e->getMessage();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -185,7 +186,7 @@ try {
                     <button type="submit" name="edit_todo">Update Todo</button>
                 <?php else: ?>
                     <button type="submit" name="add_todo">Add Todo</button>
-                <? endif ?>
+                <?php endif ?>
             </form>
 
             <table>
@@ -228,6 +229,7 @@ try {
         </div>
     </body>
 </html>
+
 
 
 

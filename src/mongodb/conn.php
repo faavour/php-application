@@ -1,6 +1,12 @@
 <?php
+require_once "../vendor/autoload.php";
+
 $mongo_uri = getenv('MONGO_URI');
-$mongo_database = getenv('MONGO_DATABASE');
+
+echo $mongo_uri;
+echo "my name is james";
+
+$mongo_database = getenv('MONGO_INITDB_DATABASE');
 
 try {
     // Connect to the MongoDB database using the MongoDB extension
