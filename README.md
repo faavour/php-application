@@ -4,8 +4,6 @@ This is a simple Todo app built with PHP and MySQLi and MongoDB. It is a Docker 
 
 ## Requirements
 
-- PHP 5.6 or higher with MySQLi extension
-- MySQL server
 - Docker Engine
 - Docker Compose
 
@@ -16,7 +14,10 @@ This is a simple Todo app built with PHP and MySQLi and MongoDB. It is a Docker 
 3. Run docker-compose up
 
 
-
+## Content Viewing
+After running these steps, the Todo application can be viewed at http://localhost.
+To view the mysql todoapp visit http://localhost/mysql
+To view the mongodb todoapp visit http://localhost/mongodb
 
 
 
