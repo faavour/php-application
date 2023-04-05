@@ -22,10 +22,10 @@ services:
       - mysql
       - mongo 
     environment:
-      MYSQL_HOST: mysql
-      MYSQL_DATABASE: helloworld
-      MYSQL_USER: helloworld
-      MYSQL_PASSWORD: db-password
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - 8080:80
     volumes:
@@ -35,10 +35,10 @@ services:
     image: mysql:8.0.27
     container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root-password
-      MYSQL_DATABASE: helloworld
-      MYSQL_USER: helloworld
-      MYSQL_PASSWORD: db-password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
