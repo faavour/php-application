@@ -13,3 +13,16 @@ This is a simple Todo app built with PHP and MySQLi and MongoDB. It is a Docker 
 
 1. Clone this repository or download the source code.
 2. Create a new MySQL database for the app.
+
+
+
+
+
+
+
+
+
+## INFRASTRUCTURE LAYOUT
+           
+    
+
