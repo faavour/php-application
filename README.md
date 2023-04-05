@@ -12,7 +12,8 @@ This is a simple Todo app built with PHP and MySQLi and MongoDB. It is a Docker 
 ## Installation
 
 1. Clone this repository or download the source code.
-2. Create a new MySQL database for the app.
+2. Run docker-compose build
+3. Run docker-compose up
 
 
 
@@ -23,6 +24,8 @@ This is a simple Todo app built with PHP and MySQLi and MongoDB. It is a Docker 
 
 
 ## INFRASTRUCTURE LAYOUT
-           
     
 
+![infrastructure-diagram](https://user-images.githubusercontent.com/95984978/230228227-a15d5660-dcb6-4dc9-92ce-865853c868fd.png)
+
+By utilizing this architecture, the Todo app can continue to be highly available even if one or more components fail. The RDS instances provide automatic failover and recovery for the database, and the ALB makes sure that traffic is distributed fairly among the Web Frontend and API Backend instances.
