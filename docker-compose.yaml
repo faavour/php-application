@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+  apache:
+    container_name: apache
+    build: ./docker/apache
+    links:
+      - php
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_DATABASE: helloworld
+      MYSQL_USER: helloworld
+      MYSQL_PASSWORD: db-password
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/usr/local/apache2/htdocs
+      - ./docker/apache/apache.conf:/etc/apache2/sites-available/000-default.conf
+  php:
+    container_name: php
+    build: ./docker/php
+    links:
+      - mysql
+      - mongo 
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_DATABASE: helloworld
+      MYSQL_USER: helloworld
+      MYSQL_PASSWORD: db-password
+    ports:
+      - 8080:80
+    volumes:
+      - ./src:/usr/local/apache2/htdocs
+    working_dir: /usr/local/apache2/htdocs
+  mysql:
+    image: mysql:8.0.27
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root-password
+      MYSQL_DATABASE: helloworld
+      MYSQL_USER: helloworld
+      MYSQL_PASSWORD: db-password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database/mysql:/var/lib/mysql
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data:/data/db
